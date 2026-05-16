@@ -131,11 +131,11 @@ export default function Dashboard({ setUser }) {
             <span style={styles.actionIcon}>📚</span>
             <span>Start Lesson</span>
           </div>
-          <div style={styles.actionBtn}>
-            <span style={styles.actionIcon}>📊</span>
-            <span>View Report</span>
-          </div>
-          <div style={styles.actionBtn}>
+          <div onClick={() => navigate('/report')} style={styles.actionBtn}>
+  <span style={styles.actionIcon}>📊</span>
+  <span>View Report</span>
+</div>
+          <div onClick={() => navigate('/badges')} style={styles.actionBtn}>
             <span style={styles.actionIcon}>🏅</span>
             <span>Badges</span>
           </div>
