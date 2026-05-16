@@ -132,14 +132,14 @@ export default function Dashboard({ setUser }) {
             <span>Start Lesson</span>
           </div>
           <div onClick={() => navigate('/report')} style={styles.actionBtn}>
-  <span style={styles.actionIcon}>📊</span>
-  <span>View Report</span>
-</div>
+            <span style={styles.actionIcon}>📊</span>
+            <span>View Report</span>
+          </div>
           <div onClick={() => navigate('/badges')} style={styles.actionBtn}>
             <span style={styles.actionIcon}>🏅</span>
             <span>Badges</span>
           </div>
-          <div style={styles.actionBtn}>
+          <div onClick={() => navigate('/certificate')} style={styles.actionBtn}>
             <span style={styles.actionIcon}>🎓</span>
             <span>Certificate</span>
           </div>

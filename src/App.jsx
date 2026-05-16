@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { useState } from 'react'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Setup from './pages/Setup'
 import Lesson from './pages/Lesson'
 import Report from './pages/Report'
-import { useState } from 'react'
+import Badges from './pages/Badges'
+import Certificate from './pages/Certificate'
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem('brightmind_user'))
@@ -17,6 +19,8 @@ function App() {
         <Route path="/setup" element={user ? <Setup /> : <Navigate to="/login" />} />
         <Route path="/lesson" element={user ? <Lesson /> : <Navigate to="/login" />} />
         <Route path="/report" element={user ? <Report /> : <Navigate to="/login" />} />
+        <Route path="/badges" element={user ? <Badges /> : <Navigate to="/login" />} />
+        <Route path="/certificate" element={user ? <Certificate /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
       </Routes>
     </BrowserRouter>
