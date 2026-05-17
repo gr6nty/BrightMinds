@@ -6,9 +6,7 @@ export default function Dashboard({ setUser }) {
   const userStr = localStorage.getItem('brightmind_user')
   const user = userStr ? JSON.parse(userStr) : {}
 
-  const [children] = useState([
-    { id: 1, name: 'Amara', grade: 'Grade 3', region: 'Caribbean', passion: 'Football', xp: 120, streak: 3, subject: 'Mathematics' },
-  ])
+  const [children] = useState([])
 
   function logout() {
     localStorage.removeItem('brightmind_user')
