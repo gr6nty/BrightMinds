@@ -27,6 +27,7 @@ export default function Dashboard({ setUser }) {
         </div>
         <div style={styles.headerRight}>
           <span style={styles.emailText}>{user.email}</span>
+          <button onClick={() => navigate('/pricing')} style={styles.plansBtn}>💎 View Plans</button>
           <button onClick={logout} style={styles.logoutBtn}>Log out</button>
         </div>
       </div>
@@ -135,6 +136,10 @@ export default function Dashboard({ setUser }) {
             <span style={styles.actionIcon}>🛡️</span>
             <span>Parent View</span>
           </div>
+          <div onClick={() => navigate('/pricing')} style={styles.actionBtn}>
+            <span style={styles.actionIcon}>💎</span>
+            <span>Plans</span>
+          </div>
         </div>
 
       </div>
@@ -158,8 +163,15 @@ const styles = {
   headerLeft: { display: 'flex', alignItems: 'center', gap: '8px' },
   logo: { fontSize: '1.5rem' },
   appName: { fontFamily: "'Fredoka One', cursive", fontSize: '1.25rem', color: '#fff' },
-  headerRight: { display: 'flex', alignItems: 'center', gap: '1rem' },
+  headerRight: { display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' },
   emailText: { fontSize: '12px', color: 'rgba(255,255,255,0.4)' },
+  plansBtn: {
+    padding: '6px 14px',
+    background: 'linear-gradient(135deg, #4F46E5, #7C3AED)',
+    border: 'none', borderRadius: '8px',
+    color: '#fff', fontSize: '12px', cursor: 'pointer',
+    fontFamily: "'Nunito', sans-serif", fontWeight: '700',
+  },
   logoutBtn: {
     padding: '6px 14px', background: 'rgba(255,255,255,0.08)',
     border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px',
@@ -241,7 +253,7 @@ const styles = {
   addIcon: { fontSize: '2rem', color: 'rgba(255,255,255,0.2)', marginBottom: '8px' },
   addText: { fontSize: '13px', color: 'rgba(255,255,255,0.3)', fontWeight: '700' },
   actionsRow: {
-    display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.75rem',
+    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem',
   },
   actionBtn: {
     background: 'rgba(255,255,255,0.05)',
