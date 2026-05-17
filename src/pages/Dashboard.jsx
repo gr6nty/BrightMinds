@@ -50,11 +50,11 @@ export default function Dashboard({ setUser }) {
             <div style={styles.statLabel}>Total XP</div>
           </div>
           <div style={styles.statBox}>
-            <div style={styles.statNum}>{Math.max(...children.map(c => c.streak))}🔥</div>
+            <div style={styles.statNum}>{children.length > 0 ? Math.max(...children.map(c => c.streak)) : 0}🔥</div>
             <div style={styles.statLabel}>Best Streak</div>
           </div>
           <div style={styles.statBox}>
-            <div style={styles.statNum}>5</div>
+            <div style={styles.statNum}>0</div>
             <div style={styles.statLabel}>Lessons Done</div>
           </div>
         </div>
@@ -92,10 +92,10 @@ export default function Dashboard({ setUser }) {
 
               <div style={styles.progressLabel}>
                 <span>{child.subject}</span>
-                <span>42%</span>
+                <span>0%</span>
               </div>
               <div style={styles.progressTrack}>
-                <div style={{ ...styles.progressFill, width: '42%' }} />
+                <div style={{ ...styles.progressFill, width: '0%' }} />
               </div>
 
               <button onClick={() => navigate('/lesson')} style={styles.startBtn}>
@@ -104,10 +104,11 @@ export default function Dashboard({ setUser }) {
             </div>
           ))}
 
-          {/* Add child card */}
-          <div onClick={() => navigate('/setup')} style={styles.addCard}>
-            <div style={styles.addIcon}>+</div>
-            <div style={styles.addText}>Add a child</div>
+          {/* Start first lesson card */}
+          <div onClick={() => navigate('/lesson')} style={styles.addCard}>
+            <div style={styles.addIcon}>🦉</div>
+            <div style={styles.addText}>Start your first lesson!</div>
+            <div style={styles.addSub}>Tap to begin</div>
           </div>
         </div>
 
@@ -248,8 +249,9 @@ const styles = {
     alignItems: 'center', justifyContent: 'center',
     cursor: 'pointer', minHeight: '200px',
   },
-  addIcon: { fontSize: '2rem', color: 'rgba(255,255,255,0.2)', marginBottom: '8px' },
-  addText: { fontSize: '13px', color: 'rgba(255,255,255,0.3)', fontWeight: '700' },
+  addIcon: { fontSize: '2.5rem', marginBottom: '8px' },
+  addText: { fontSize: '14px', color: 'rgba(255,255,255,0.6)', fontWeight: '700' },
+  addSub: { fontSize: '11px', color: 'rgba(255,255,255,0.25)', marginTop: '6px' },
   actionsRow: {
     display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem',
   },
